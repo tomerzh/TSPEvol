@@ -4,8 +4,8 @@ from random import randint
 
 from city import City
 
-MIN_BOUND = 2 ** 31 - 1
-MAX_BOUND = -2 ** 31
+MIN_BOUND = 0
+MAX_BOUND = 2 ** 31
 
 class CityVector(Vector):
     def __init__(self,

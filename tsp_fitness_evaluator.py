@@ -10,3 +10,4 @@ class TSPFitnessEvaluator(SimpleIndividualEvaluator):
             fitness += individual[i].distance(individual[i + 1])
         fitness += individual[len(individual) - 1].distance(individual[0])
         return fitness
+
