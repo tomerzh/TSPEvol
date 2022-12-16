@@ -8,7 +8,7 @@ from city_vector import CityVector
 # remember to pass on a non default gene_creator
 class PermutationCreator(GAVectorCreator):
     def __init__(self, length=1, gene_creator=None, events=None):
-        super().__init__(length, gene_creator, CityVector, events)
+        super().__init__(length, gene_creator,(0.0,10), CityVector, events)
         self.vector = None
 
     def create_individuals(self, n_individuals, higher_is_better):
@@ -28,6 +28,8 @@ class PermutationCreator(GAVectorCreator):
 
 
 permutation1 = PermutationCreator(4)
+print(permutation1)
+# print(permutation1.type)
 print(permutation1.create_individuals(3, True))
 
 
