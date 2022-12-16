@@ -19,14 +19,15 @@ class CityVector(Vector):
         if type(self.bounds) == tuple:
             x = randint(self.bounds[0], self.bounds[1])
             y = randint(self.bounds[0], self.bounds[1])
-            return City(x, y)
+            self.city_temp = City(x, y)
+            return self.city_temp
         x = randint(self.bounds[index][0], self.bounds[index][1])
         y = randint(self.bounds[index][0], self.bounds[index][1])
         self.city_temp = City(x,y)
         return self.city_temp
 
-    def print_city_vector(self):
-        print(self.city_temp)
+    def get_city_vector(self):
+        return self.city_temp
 
 # vector1 = CityVector(None, 5)
 # vector1.show()

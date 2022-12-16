@@ -27,9 +27,11 @@ class PermutationCreator(GAVectorCreator):
         individual.set_vector(perm)
 
 
-permutation1 = PermutationCreator(4)
-print(permutation1)
-# print(permutation1.type)
-print(permutation1.create_individuals(3, True))
+# permutation1 = PermutationCreator(4)
+# print(permutation1)
+# # print(permutation1.type)
+# vector = permutation1.create_individuals(3, True)
+# for i in vector:
+#     i.show()
 
 

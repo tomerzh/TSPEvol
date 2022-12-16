@@ -9,20 +9,29 @@ class PermutationMutation(GeneticOperator):
         self.applied_individuals = None
 
     def apply(self, individuals):
-        range = individuals.size()
-        print("before swaping " + individuals)
-        swapping_indices = np.random.choice(range, 2, replace=False)
-        first_city = individuals.cell_value(swapping_indices[0])
-        second_city = individuals.cell_value(swapping_indices[1])
-        individuals.set_cell_value(swapping_indices[0], second_city)
-        individuals.set_cell_value(swapping_indices[1], first_city)
-        # self.applied_individuals = individuals
-        print("after swaping " + individuals)
+        for ind in individuals:
+            range = ind.size()
+            #print("before swapping " + ind.show())
+            swapping_indices = np.random.choice(range, 2, replace=False)
+            first_city = ind.cell_value(swapping_indices[0])
+            second_city = ind.cell_value(swapping_indices[1])
+            ind.set_cell_value(swapping_indices[0], second_city)
+            ind.set_cell_value(swapping_indices[1], first_city)
+            #print("after swapping " + individuals)
 
         return individuals
 
-# individual = perm_creator.PermutationCreator(5).create_individuals(1,True)
-# PermutationMutation.apply(individual)
+
+individuals = perm_creator.PermutationCreator(5).create_individuals(3, True)
+for i in individuals:
+     i.show()
+
+perm = PermutationMutation(1)
+print("AFTER MUTATION")
+individuals = perm.apply(individuals)
+for i in individuals:
+     i.show()
+
 
 
 
