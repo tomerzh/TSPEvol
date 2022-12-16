@@ -11,10 +11,10 @@ class CityVector(Vector):
     def __init__(self,
                  fitness,
                  length,
-                 bounds=(MIN_BOUND, MAX_BOUND)):
+                 bounds=(0, 10)):
         super().__init__(fitness, length=length, bounds=bounds)
 
-    def get_random_city_in_bounds(self, index):
+    def get_random_number_in_bounds(self, index):
         if type(self.bounds) == tuple:
             x = randint(self.bounds[0], self.bounds[1])
             y = randint(self.bounds[0], self.bounds[1])
@@ -22,3 +22,10 @@ class CityVector(Vector):
         x = randint(self.bounds[index][0], self.bounds[index][1])
         y = randint(self.bounds[index][0], self.bounds[index][1])
         return City(x, y)
+
+
+# vector1 = CityVector(None, 5)
+# vector1.show()
+# vector = [vector1.get_random_number_in_bounds(i) for i in range(vector1.length)]
+# vector1.set_vector(vector)
+# vector1.show()
