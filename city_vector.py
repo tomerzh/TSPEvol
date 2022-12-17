@@ -7,11 +7,12 @@ from city import City
 MIN_BOUND = 0
 MAX_BOUND = 2 ** 31
 
+
 class CityVector(Vector):
     def __init__(self,
                  fitness,
                  length,
-                 bounds=(0, 10)):
+                 bounds=(MIN_BOUND, MAX_BOUND)):
         super().__init__(fitness, length=length, bounds=bounds)
         self.city_temp = None
 
@@ -23,14 +24,17 @@ class CityVector(Vector):
             return self.city_temp
         x = randint(self.bounds[index][0], self.bounds[index][1])
         y = randint(self.bounds[index][0], self.bounds[index][1])
-        self.city_temp = City(x,y)
+        self.city_temp = City(x, y)
         return self.city_temp
 
     def get_city_vector(self):
         return self.city_temp
 
-# vector1 = CityVector(None, 5)
-# vector1.show()
-# vector = [vector1.get_random_number_in_bounds(i) for i in range(vector1.length)]
-# vector1.set_vector(vector)
-# vector1.show()
+
+if __name__ == "__main__":
+    vector1 = CityVector(None, 5)
+    vector1.show()
+    vector = [vector1.get_random_number_in_bounds(i) for i in range(vector1.length)]
+    vector1.set_vector(vector)
+    vector1.show()
+
