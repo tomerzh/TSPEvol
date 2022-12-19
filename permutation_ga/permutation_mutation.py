@@ -1,7 +1,6 @@
 import numpy as np
 
 from eckity.genetic_operators.genetic_operator import GeneticOperator
-import permutation_creator as perm_creator
 
 
 class PermutationMutation(GeneticOperator):
@@ -17,15 +16,16 @@ class PermutationMutation(GeneticOperator):
             second_city = ind.cell_value(swapping_indices[1])
             ind.set_cell_value(swapping_indices[0], second_city)
             ind.set_cell_value(swapping_indices[1], first_city)
+        self.applied_individuals = individuals
         return individuals
 
 
-if __name__ == "__main__":
-    individuals = perm_creator.PermutationCreator(5).create_individuals(3, True)
-    for i in individuals:
-        i.show()
-    perm = PermutationMutation(1)
-    print("AFTER MUTATION")
-    individuals = perm.apply(individuals)
-    for i in individuals:
-        i.show()
+# if __name__ == "__main__":
+#     individuals = perm_creator.PermutationCreator(5).create_individuals(3, True)
+#     for i in individuals:
+#         i.show()
+#     perm = PermutationMutation(1)
+#     print("AFTER MUTATION")
+#     individuals = perm.apply(individuals)
+#     for i in individuals:
+#         i.show()
