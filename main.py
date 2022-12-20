@@ -17,7 +17,11 @@ from tsp_fitness_evaluator import TSPFitnessEvaluator
 def main():
     vector = [City(30, 17), City(22, 1), City(300, 45), City(423, 54), City(51, 26),
               City(6, 7), City(7, 8), City(81, 19), City(94, 10), City(10, 111)]
-    number_of_cities = len(vector)
+    if vector is not None:
+        number_of_cities = len(vector)
+    else:
+        number_of_cities = 10
+
     population_size = 10
     max_generation = 50
 
