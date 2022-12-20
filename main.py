@@ -7,7 +7,6 @@ from eckity.statistics.best_average_worst_statistics import BestAverageWorstStat
 from eckity.subpopulation import Subpopulation
 
 from city import City
-from city_vector import CityVector
 from permutation_ga.permutation_creator import PermutationCreator
 from permutation_ga.permutation_mutation import PermutationMutation
 from permutation_ga.permutation_crossover import PermutationCrossover
@@ -31,7 +30,7 @@ def main():
                       evaluator=TSPFitnessEvaluator(),
                       higher_is_better=False,
                       elitism_rate=0.0,
-                      operators_sequence=[PermutationCrossover(),
+                      operators_sequence=[PermutationCrossover(0.4),
                                           PermutationMutation(0.1)],
                       selection_methods=[(TournamentSelection(tournament_size=4, higher_is_better=False), 1)]),
         breeder=SimpleBreeder(),
@@ -46,14 +45,10 @@ def main():
     print("#####################################")
 
     print("The Ultimate solution found by our solver is:")
-    # for printing writing csv | NEED TO UNCOMMENT algo.finish #######################################################
-    # algo.finish()
+    algo.finish()
     with open('data.csv', mode='a') as data_file:
         data_writer = csv.writer(data_file, delimiter=',')
         data_writer.writerow([algo.best_of_run_.get_pure_fitness()])
-    print(algo.best_of_run_.get_pure_fitness())
-    # algo.finish()
-
 
 
 if __name__ == '__main__':

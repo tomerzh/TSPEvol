@@ -1,4 +1,5 @@
 import numpy as np
+from random import uniform
 from eckity.genetic_operators.genetic_operator import GeneticOperator
 from city_vector import CityVector
 
@@ -6,13 +7,14 @@ from city_vector import CityVector
 # fix when number of individuals is odd
 class PermutationCrossover(GeneticOperator):
     # check if probability is needed
-    def __init__(self):
+    def __init__(self, probability=0.8):
         self.applied_individuals = None
+        self.probability = probability
         super().__init__(arity=2)
 
     def apply(self, individuals):
         for i in range(0, len(individuals) - 1, 2):
-            if i + 1 < len(individuals):
+            if i + 1 < len(individuals) and uniform(0, 1) <= self.probability:
                 individuals[i] = self.cross(individuals[i], individuals[i + 1])
                 individuals[i + 1] = self.cross(individuals[i + 1], individuals[i])
         self.applied_individuals = individuals
