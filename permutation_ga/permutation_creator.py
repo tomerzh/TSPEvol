@@ -4,13 +4,10 @@ from eckity.creators.ga_creators.simple_vector_creator import GAVectorCreator
 from eckity.fitness.simple_fitness import SimpleFitness
 from city_vector import CityVector
 
-MIN_BOUND = 0
-MAX_BOUND = 2 ** 31
-
 
 # remember to pass on a non default gene_creator
 class PermutationCreator(GAVectorCreator):
-    def __init__(self, length=1, city_vector=None, gene_creator=None, bounds=(MIN_BOUND, MAX_BOUND), events=None):
+    def __init__(self, length=1, city_vector=None, gene_creator=None, bounds=(0, 100), events=None):
         super().__init__(length, gene_creator, bounds, CityVector, events)
         self.vector = city_vector
 

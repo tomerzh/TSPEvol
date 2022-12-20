@@ -17,14 +17,11 @@ def main():
     population_size = 10
     max_generation = 50
 
-    city_vec = CityVector(None, number_of_cities)
     vector = [City(30, 17), City(22, 1), City(300, 45), City(423, 54), City(51, 26),
               City(6, 7), City(7, 8), City(81, 19), City(94, 10), City(10, 111)]
-    city_vec.set_vector(vector)
-    city_vec.show()
 
     algo = SimpleEvolution(
-        Subpopulation(creators=PermutationCreator(length=number_of_cities, city_vector=city_vec),
+        Subpopulation(creators=PermutationCreator(length=number_of_cities, city_vector=vector),
                       population_size=population_size,
                       evaluator=TSPFitnessEvaluator(),
                       higher_is_better=False,
