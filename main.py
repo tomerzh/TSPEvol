@@ -1,3 +1,5 @@
+import csv
+
 from eckity.algorithms.simple_evolution import SimpleEvolution
 from eckity.breeders.simple_breeder import SimpleBreeder
 from eckity.genetic_operators.selections.tournament_selection import TournamentSelection
@@ -40,7 +42,14 @@ def main():
     print("#####################################")
 
     print("The Ultimate solution found by our solver is:")
-    algo.finish()
+    # for printing writing csv | NEED TO UNCOMMENT algo.finish #######################################################
+    # algo.finish()
+    with open('data.csv', mode='a') as data_file:
+        data_writer = csv.writer(data_file, delimiter=',')
+        data_writer.writerow([algo.best_of_run_.get_pure_fitness()])
+    print(algo.best_of_run_.get_pure_fitness())
+    # algo.finish()
+
 
 
 if __name__ == '__main__':
