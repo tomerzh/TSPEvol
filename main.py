@@ -3,6 +3,9 @@ from eckity.breeders.simple_breeder import SimpleBreeder
 from eckity.genetic_operators.selections.tournament_selection import TournamentSelection
 from eckity.statistics.best_average_worst_statistics import BestAverageWorstStatistics
 from eckity.subpopulation import Subpopulation
+
+from city import City
+from city_vector import CityVector
 from permutation_ga.permutation_creator import PermutationCreator
 from permutation_ga.permutation_mutation import PermutationMutation
 from permutation_ga.permutation_crossover import PermutationCrossover
@@ -13,8 +16,15 @@ def main():
     number_of_cities = 10
     population_size = 10
     max_generation = 50
+
+    city_vec = CityVector(None, number_of_cities)
+    vector = [City(30, 17), City(22, 1), City(300, 45), City(423, 54), City(51, 26),
+              City(6, 7), City(7, 8), City(81, 19), City(94, 10), City(10, 111)]
+    city_vec.set_vector(vector)
+    city_vec.show()
+
     algo = SimpleEvolution(
-        Subpopulation(creators=PermutationCreator(length=number_of_cities),
+        Subpopulation(creators=PermutationCreator(length=number_of_cities, city_vector=city_vec),
                       population_size=population_size,
                       evaluator=TSPFitnessEvaluator(),
                       higher_is_better=False,
