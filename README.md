@@ -7,7 +7,7 @@
 
    <h3>Problem Description:</h3>
 
-    The TSP has many practical applications, including planning delivery routes, scheduling service technicians, and designing telecommunications networks.
+   The TSP has many practical applications, including planning delivery routes, scheduling service technicians, and designing telecommunications networks.
    In the TSP, a salesman must visit a set of cities, each represented by a node in a graph.
    The salesman starts at one of the cities and must visit all the other cities exactly once before returning to the starting city.
    The goal is to find the shortest possible route that satisfies these constraints.
