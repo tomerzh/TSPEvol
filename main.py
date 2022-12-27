@@ -24,7 +24,7 @@ def main():
 
     population_size = 10
     max_generation = 100
-    number_of_iterations = 1
+    number_of_iterations = 80
 
     for i in range(number_of_iterations):
         algo = SimpleEvolution(
@@ -53,8 +53,8 @@ def main():
 
         print("The Ultimate solution found by our solver is:")
         algo.finish()
-        with open('data.csv', mode='a') as data_file:
-            data_writer = csv.writer(data_file, delimiter=',')
+        with open('data.csv', mode='a' ,newline="") as data_file:
+            data_writer = csv.writer(data_file)
             data_writer.writerow([algo.best_of_run_.get_pure_fitness()])
             # x_vector = [algo.best_of_run_.get_vector()[i].get_x() for i in range(len(algo.best_of_run_.get_vector()))]
             # y_vector = [algo.best_of_run_.get_vector()[i].get_y() for i in range(len(algo.best_of_run_.get_vector()))]
