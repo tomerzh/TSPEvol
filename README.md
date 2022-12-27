@@ -30,7 +30,7 @@
    <b>Fitness evaluation –</b> The fitness will be defined as the sum of distances between the cities based on the order defined in the genotype. Best fitness    will be defined as the minimal one.<br>
    <b>Selection –</b> We used tournament selection, taking 4 individuals and choosing the one with the highest fitness.<br>
    <b>Crossover –</b> We divide the population into pairs and each pair represent parents. 
-   For a given probability we randomly choose start index and end index for the first parent and take the subset [start : end]. 
+   For a given probability we randomly choose start index and end index for the first parent and take the subset [start : end].<br>
    Then, we go through the second parent vector and check every element, if the element is included in the subset we move on, else, we append it to the          subset. 
    We do it to maintain the fact that the vector is a permutation of the cities.<br>
    We do the same operation for the second parent, and after the crossover we have two new individuals for the next generation.<br>
