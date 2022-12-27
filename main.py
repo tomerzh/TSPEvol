@@ -24,7 +24,11 @@ def main():
 
     population_size = 10
     max_generation = 100
-    number_of_iterations = 80
+    number_of_iterations = 1
+
+    best_fitness = 2 ** 31
+    x_vector = []
+    y_vector = []
 
     for i in range(number_of_iterations):
         algo = SimpleEvolution(
@@ -53,13 +57,21 @@ def main():
 
         print("The Ultimate solution found by our solver is:")
         algo.finish()
-        with open('data.csv', mode='a' ,newline="") as data_file:
+        with open('data.csv', mode='a', newline="") as data_file:
             data_writer = csv.writer(data_file)
             data_writer.writerow([algo.best_of_run_.get_pure_fitness()])
-            # x_vector = [algo.best_of_run_.get_vector()[i].get_x() for i in range(len(algo.best_of_run_.get_vector()))]
-            # y_vector = [algo.best_of_run_.get_vector()[i].get_y() for i in range(len(algo.best_of_run_.get_vector()))]
-            # data_writer.writerow(x_vector)
-            # data_writer.writerow(y_vector)
+            if algo.best_of_run_.get_pure_fitness() < best_fitness:
+                best_fitness = algo.best_of_run_.get_pure_fitness()
+                x_vector = [algo.best_of_run_.get_vector()[i].get_x() for i in
+                            range(len(algo.best_of_run_.get_vector()))]
+                y_vector = [algo.best_of_run_.get_vector()[i].get_y() for i in
+                            range(len(algo.best_of_run_.get_vector()))]
+
+    with open('data.csv', mode='a', newline="") as data_file:
+        data_writer = csv.writer(data_file)
+        data_writer.writerow(x_vector)
+        data_writer.writerow(y_vector)
+        data_writer.writerow([best_fitness])
 
 
 if __name__ == '__main__':
