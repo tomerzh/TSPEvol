@@ -20,7 +20,7 @@ The algorithm takes a population of permutations of the cities we want to find t
 
 <h3>Implementation Details:</h3>
 We think about this problem as collection of two-dimensional coordinates in the first quarter of the x, y axis. Our data structures use the following:
-<u>Genotype<u> – We represented a route with vector, while each element is City object with two coordinates x, y.  The salesman must visit every city once except for the first city, and he can go to every city meaning that all cities are connected. 
+<u>Genotype</u> – We represented a route with vector, while each element is City object with two coordinates x, y.  The salesman must visit every city once except for the first city, and he can go to every city meaning that all cities are connected. 
 The vector is permutation of the given cities, the first element is the starting point and the ending point, the route is from city [i] to city [i+1].
 First generation – The script can handle two scenarios:
 •	The user defines the vector of the cities, and the script creates random permutation of the vector as many times as the user defines.
