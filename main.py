@@ -24,7 +24,7 @@ def main():
 
     population_size = 10
     max_generation = 100
-    number_of_iterations = 1
+    number_of_iterations = 80
 
     best_fitness = 2 ** 31
     x_vector = []
