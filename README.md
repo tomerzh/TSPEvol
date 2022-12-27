@@ -14,3 +14,6 @@ As a result, a variety of heuristics and approximation algorithms have been deve
 These approaches often involve finding a suboptimal solution and then improving upon it until a satisfactory solution is found.
 
 <h3>Solution:</h3>
+The problem is a minimization problem, therefore we used an evolutionary algorithm to solve it, using the EC-Kity library.
+It takes a population of permutations of the cities we want to find the shortest path between and calculates the optimal distance for X generations (X is choiceable).
+
