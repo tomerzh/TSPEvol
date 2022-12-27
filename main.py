@@ -24,7 +24,7 @@ def main():
 
     population_size = 10
     max_generation = 100
-    number_of_iterations = 80
+    number_of_iterations = 1
 
     best_fitness = 2 ** 31
     x_vector = []
@@ -48,7 +48,10 @@ def main():
         print("EA Process Presented Bellow:")
 
         # for j in range(max_generation):
-        #     algo.generation_iteration()
+        #     algo.generation_num = j
+        #
+        #     algo.set_generation_seed(algo.next_seed())
+        #     algo.generation_iteration(j)
         #     print("Generation: ", j, " Best: ", algo.best_of_gen.fitness)
 
         # evolve the generated initial population
