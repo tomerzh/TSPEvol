@@ -24,32 +24,42 @@ def main():
 
     population_size = 10
     max_generation = 100
+    number_of_iterations = 1
 
-    algo = SimpleEvolution(
-        Subpopulation(creators=PermutationCreator(length=number_of_cities, city_vector=vector),
-                      population_size=population_size,
-                      evaluator=TSPFitnessEvaluator(),
-                      higher_is_better=False,
-                      elitism_rate=0.1,
-                      operators_sequence=[PermutationCrossover(0.8),
-                                          PermutationMutation(0.1)],
-                      selection_methods=[(TournamentSelection(tournament_size=4, higher_is_better=False), 1)]),
-        breeder=SimpleBreeder(),
-        max_workers=1,
-        max_generation=max_generation,
-        statistics=BestAverageWorstStatistics()
-    )
-    print("EA Process Presented Bellow:")
+    for i in range(number_of_iterations):
+        algo = SimpleEvolution(
+            Subpopulation(creators=PermutationCreator(length=number_of_cities, city_vector=vector),
+                          population_size=population_size,
+                          evaluator=TSPFitnessEvaluator(),
+                          higher_is_better=False,
+                          elitism_rate=0.1,
+                          operators_sequence=[PermutationCrossover(0.8),
+                                              PermutationMutation(0.1)],
+                          selection_methods=[(TournamentSelection(tournament_size=4, higher_is_better=False), 1)]),
+            breeder=SimpleBreeder(),
+            max_workers=1,
+            max_generation=max_generation,
+            statistics=BestAverageWorstStatistics()
+        )
+        print("EA Process Presented Bellow:")
 
-    # evolve the generated initial population
-    algo.evolve()
-    print("#####################################")
+        # for j in range(max_generation):
+        #     algo.generation_iteration()
+        #     print("Generation: ", j, " Best: ", algo.best_of_gen.fitness)
 
-    print("The Ultimate solution found by our solver is:")
-    algo.finish()
-    with open('data.csv', mode='a') as data_file:
-        data_writer = csv.writer(data_file, delimiter=',')
-        data_writer.writerow([algo.best_of_run_.get_pure_fitness()])
+        # evolve the generated initial population
+        algo.evolve()
+        print("#####################################")
+
+        print("The Ultimate solution found by our solver is:")
+        algo.finish()
+        with open('data.csv', mode='a') as data_file:
+            data_writer = csv.writer(data_file, delimiter=',')
+            data_writer.writerow([algo.best_of_run_.get_pure_fitness()])
+            # x_vector = [algo.best_of_run_.get_vector()[i].get_x() for i in range(len(algo.best_of_run_.get_vector()))]
+            # y_vector = [algo.best_of_run_.get_vector()[i].get_y() for i in range(len(algo.best_of_run_.get_vector()))]
+            # data_writer.writerow(x_vector)
+            # data_writer.writerow(y_vector)
 
 
 if __name__ == '__main__':

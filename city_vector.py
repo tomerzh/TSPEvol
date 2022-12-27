@@ -30,6 +30,12 @@ class CityVector(Vector):
     def get_city_vector(self):
         return self.city_temp
 
+    def get_x(self):
+        return self.city_temp.get_x()
+
+    def get_y(self):
+        return self.city_temp.get_y()
+
 
 if __name__ == "__main__":
     vector1 = CityVector(None, 5)
