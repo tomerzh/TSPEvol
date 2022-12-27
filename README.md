@@ -19,6 +19,7 @@ using the <a href="https://github.com/EC-KitY/EC-KitY">EC-Kity</a> <img src="htt
 The algorithm takes a population of permutations of the cities we want to find the shortest path between, represents by a linear vector (GA) and calculates the optimal distance for X generations (X is choiceable).
 
 <h3>Implementation Details:</h3>
+<p>
 We think about this problem as collection of two-dimensional coordinates in the first quarter of the x, y axis. Our data structures use the following:
 <u>Genotype</u> – We represented a route with vector, while each element is City object with two coordinates x, y.  The salesman must visit every city once except for the first city, and he can go to every city meaning that all cities are connected. 
 The vector is permutation of the given cities, the first element is the starting point and the ending point, the route is from city [i] to city [i+1].
@@ -33,5 +34,6 @@ Then, we go through the second parent vector and check every element, if the ele
 We do it to maintain the fact that the vector is a permutation of the cities.
 We do the same operation for the second parent, and after the crossover we have two new individuals for the next generation.
 Mutation – After the crossover, we take each new individual with probability of 0.1 (or anything the user wants), we randomly choose two indexes in the individual and swap them, making a different permutation.
+ </p>
 
 
