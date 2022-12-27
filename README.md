@@ -18,3 +18,20 @@ The problem is a minimization problem, therefore we used an evolutionary algorit
 using the <a href="https://github.com/EC-KitY/EC-KitY">EC-Kity</a> <img src="https://avatars.githubusercontent.com/u/95233107?s=200&v=4" alt="EC-Kity" width="30" height="30" align="right"> library.
 The algorithm takes a population of permutations of the cities we want to find the shortest path between, represents by a linear vector (GA) and calculates the optimal distance for X generations (X is choiceable).
 
+<h3>Implementation Details:</h3>
+We think about this problem as collection of two-dimensional coordinates in the first quarter of the x, y axis. Our data structures use the following:
+<u> Genotype <u> – We represented a route with vector, while each element is City object with two coordinates x, y.  The salesman must visit every city once except for the first city, and he can go to every city meaning that all cities are connected. 
+The vector is permutation of the given cities, the first element is the starting point and the ending point, the route is from city [i] to city [i+1].
+First generation – The script can handle two scenarios:
+•	The user defines the vector of the cities, and the script creates random permutation of the vector as many times as the user defines.
+•	The user doesn’t define a specific vector, so the script generates a random vector of cities and then creates random permutation of the vector.
+Fitness evaluation – The fitness will be defined as the sum of distances between the cities based on the order defined in the genotype. Best fitness will be defined as the minimal one.
+Selection – We used tournament selection, taking 4 individuals and choosing the one with the highest fitness.
+Crossover – We divide the population into pairs and each pair represent parents. 
+For a given probability we randomly choose start index and end index for the first parent and take the subset [start : end]. 
+Then, we go through the second parent vector and check every element, if the element is included in the subset we move on, else, we append it to the subset. 
+We do it to maintain the fact that the vector is a permutation of the cities.
+We do the same operation for the second parent, and after the crossover we have two new individuals for the next generation.
+Mutation – After the crossover, we take each new individual with probability of 0.1 (or anything the user wants), we randomly choose two indexes in the individual and swap them, making a different permutation.
+
+
