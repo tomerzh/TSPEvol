@@ -16,7 +16,7 @@
 
    <h3>Solution:</h3>
    The problem is a minimization problem, therefore we used an evolutionary algorithm to solve it,
-   using the <a href="https://github.com/EC-KitY/EC-KitY">EC-Kity</a> <img src="https://avatars.githubusercontent.com/u/95233107?s=200&v=4" alt="EC-Kity"        width="30" height="30" align="right"> library.
+   using the <span><a href="https://github.com/EC-KitY/EC-KitY">EC-Kity</a> <img src="https://avatars.githubusercontent.com/u/95233107?s=200&v=4" alt="EC-Kity"        width="30" height="30"></span> library.<br />
    The algorithm takes a population of permutations of the cities we want to find the shortest path between, represents by a linear vector (GA) and calculates    the optimal distance for X generations (X is choiceable).
 
    <h3>Implementation Details:</h3>
@@ -39,7 +39,7 @@
    <h3>Results:</h3>
    We wanted to give the algorithm the best parameters for a better fitness in the end of the run.<br>
    After an operation of trial and error, we discovered that the best parameters are:<br>
-•	<b>Population size – The size of the population in every generation is 100, meaning we are using 100 individuals (routes) in every generation.<br>
+   •	<b>Population size –</b> The size of the population in every generation is 100, meaning we are using 100 individuals (routes) in every generation.<br>
 •	<b>Number of generations –</b> The number of generations in one run is 100.<br>
 •	<b>Number of iterations –</b> We run the algorithm 100 times, to try and understand what the best fitness is out of all the runs, if there is a lower bound to the best fitness and what is the average fitness.<br>
 •	We tried two different crossover patterns, more about that in the next section.<br>
