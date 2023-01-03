@@ -17,7 +17,7 @@
    <h3>Solution:</h3>
    The problem is a minimization problem, therefore we used an evolutionary algorithm to solve it,
    using the <span><a href="https://github.com/EC-KitY/EC-KitY">EC-Kity</a> <img src="https://avatars.githubusercontent.com/u/95233107?s=200&v=4" alt="EC-Kity"        width="30" height="30"></span> library.<br />
-   The algorithm takes a population of permutations of the cities we want to find the shortest path between, represents by a linear vector (GA) and calculates    the optimal distance for X generations (X is choiceable).
+   The algorithm takes a set of cities we want to find the shortest path between, represents by a linear vector (GA) and calculates the optimal route for X generations (X is choiceable).
 
    <h3>Implementation Details:</h3>
    We think about this problem as collection of two-dimensional coordinates in the first quarter of the x, y axis. Our data structures use the following:<br>
@@ -36,6 +36,14 @@
    We do it to maintain the fact that the vector is a permutation of the cities.<br>
    We do the same operation for the second parent, and after the crossover we have two new individuals for the next generation.<br>
    <b>Mutation –</b> After the crossover, we take each new individual with probability of 0.1 (or anything the user wants), we randomly choose two indexes in    the individual and swap them, making a different permutation.<br>
+   
+   <h3>Using Our Solver:</h3>
+   To use our TSP solver, please follow the following steps: <br>
+•	Clone our git repository. <br>
+•	You can change the coordinates of each city however you want, the only restriction is the value can not be larger than the maximum integer. Another option is to ignore the given vector of cities and the script will generate random cities for the vector. <br>
+•	Feel free to change the max_generation and population_size variables to any positive integer. <br>
+•	Run the script. The result will be presented. <br>
+
    
    <h3>Results:</h3>
    We wanted to give the algorithm the best parameters for a better fitness in the end of the run.<br>
