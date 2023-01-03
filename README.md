@@ -75,7 +75,8 @@ In the graph below we can see the results for a two-point crossover with populat
 Now for the results of the experiment with population size of 100: <br />
 After the run for 2 different crossovers, we collected the data, and the results are as follows:<br>
 <b>Single point crossover –</b> A crossover point on the parent organism string is selected. All data beyond that point in the organism string is swapped between the two parent organisms.<br>
-The results for single point crossover showed that the <b>best fitness for this crossover is 4765.3</b> and the <b>average fitness is 4948</b>. We saw that a lot of the runs gave the same fitness which was 4765.3 with the same permutation. You can see the results in the graph below:<br />
+The results for single point crossover showed that the <b>best fitness for this crossover is 4765.3</b> and the <b>average fitness is 4948</b>.
+We saw that a lot of the runs gave the same fitness which was 4765.3 with the same permutation. You can see the results in the graph below:<br />
 <br />
 <img src="https://github.com/tomerzh/TSPEvol/blob/main/plots/single.jpg?raw=true" alt="spc"    width="800" height="400"><br />
    
@@ -85,7 +86,10 @@ The results for single point crossover showed that the <b>best fitness for this 
 <img src="https://github.com/tomerzh/TSPEvol/blob/main/plots/two.jpg?raw=true" alt="tpc"    width="800" height="400"><br />
    
    <h3>Conclusion:</h3>
-   We expected that there will be a difference between the two crossovers, but in the end, both returned the same route with the same fitness.<br /> More than that, we discovered that a lot of the different runs returned the same route which is the best route in the end. <br />
+   We expected that there will be a difference between the two crossovers, but in the end, both returned the same route with the same fitness.<br />
+   The best route returned from the two crossovers: <br />
+   <b> Start point (244, 1234) -> (522, 2145) -> (423, 54) -> (300, 45) -> (94, 10) -> (81, 19) -> (51, 26) -> (30, 17) -> (22, 1) -> (7, 8) -> (6, 7) -> (0, 21) -> (3, 250) -> (1, 666) -> (222, 1113) -> (244, 1234) end point.</b> <br />
+   More than that, we discovered that a lot of the different runs returned the same route which is the best route in the end. <br />
 We assume that this fitness is the lower bound for this input and the algorithm can’t do better than that. The reason for that can be two options, the first is that this route is the best route there is for this input, and the second option is our crossover method is stuck and can’t pass this lower bound fitness.<br />
 The best route is represented by the graph below and we believe it’s the best route there is for this input:<br />
    <br />
