@@ -47,27 +47,37 @@
 •	We used 0.8 probability for a crossover and 0.1 probability for a mutation.<br>
 We tried our algorithms on 15 different cities with the following (X, Y):<br>
 <b>(30, 17), (22, 1), (300, 45), (423, 54), (51, 26), (6, 7), (7, 8), (81, 19), (94, 10), (3, 250), (1, 666), (244, 1234), (522, 2145), (0, 21), (222, 1113)</b>.<br>
-In the process of checking the best parameters we tried to run the algorithm with a small size of pipulation in each generation. We tried the algorithm with population size of 10, and found out that there is a big defference between defferent runs meaning that the standart deviation is big.
+In the process of checking the best parameters we tried to run the algorithm with a small size of pipulation in each generation. We tried the algorithm with population size of 10, and found out that there is a big defference between defferent runs meaning that the standart deviation is big the average fitness was 5617.<br />
 In the graph below we can see the results for a two-point crossover with population size 10: <br />
-
-<br />
+   <br />
+   <img src="https://github.com/tomerzh/TSPEvol/blob/main/plots/twopoint_10_pap.png?raw=true" alt="tpc_10pop"    width="800" height="400"><br />
 Now for the results of the experiment with population size of 100: <br />
 After the run for 2 different crossovers, we collected the data, and the results are as follows:<br>
 <b>Single point crossover –</b> A crossover point on the parent organism string is selected. All data beyond that point in the organism string is swapped between the two parent organisms.<br>
 The results for single point crossover showed that the <b>best fitness for this crossover is 4765.3</b> and the <b>average fitness is 4948</b>. We saw that a lot of the runs gave the same fitness which was 4765.3 with the same permutation. You can see the results in the graph below:<br />
 <br />
 <img src="https://github.com/tomerzh/TSPEvol/blob/main/plots/single.jpg?raw=true" alt="spc"    width="800" height="400"><br />
+   
 <b>Two-point crossover -</b> In two-point crossover, two crossover points are picked randomly from the parent chromosomes. The bits in between the two points are swapped between the parent organisms.<br>
-   The results for two-point crossover showed that the <b>best fitness for this crossover is 4765.3</b> and the <b>average fitness is 4941</b>. We saw that a lot of the runs gave the same fitness which was 4765.3 with the same permutation. You can see the results in the graph below: <br/ >
+   The results for two-point crossover showed that the <b>best fitness for this crossover is 4765.3</b> and the <b>average fitness is 4941</b>. We saw that a lot of the runs gave the same fitness which was 4765.3 with the same permutation. You can see the results in the graph below: <br />
 <br />
 <img src="https://github.com/tomerzh/TSPEvol/blob/main/plots/two.jpg?raw=true" alt="tpc"    width="800" height="400"><br />
-<br />
    
    <h3>Conclusion:</h3>
    We expected that there will be a difference between the two crossovers, but in the end, both returned the same route with the same fitness.<br /> More than that, we discovered that a lot of the different runs returned the same route which is the best route in the end. <br />
 We assume that this fitness is the lower bound for this input and the algorithm can’t do better than that. The reason for that can be two options, the first is that this route is the best route there is for this input, and the second option is our crossover method is stuck and can’t pass this lower bound fitness.<br />
 The best route is represented by the graph below and we believe it’s the best route there is for this input:<br />
    <br />
+   <img src="https://github.com/tomerzh/TSPEvol/blob/main/plots/routes.jpg?raw=true" alt="route"    width="800" height="400"><br />  
+   
+   <h3>Summary:</h3>
+We wanted to solve the TSP problem which is considered a NP-Hard problem.<br/ >
+In order to resolve the TSP problem we used evolutionary algorithm using linear vector permutation with 2 different crossovers (single-point and two-point) to examine the best fitness and check if there is a big difference in the results between the two methods.<br />
+We used an input containing 15 different cities and ran different kinds of runs based on the size of the population, the number of generations, and the number of iterations.<br />
+We conclude that, the most significant difference was between the population parameters.<br />
+As a result, we obtained an approximate lower bound considering input that was pointed by two different methods and they didn't diverge much on average, which is quite amazing.<br />
+We strongly believe this method of solution can achieve great results in such problems and can serve multiply industries to save money, time and resources.<br />
+An airline delivery company is an example of such a industry. <br />
 
  </html> 
 
