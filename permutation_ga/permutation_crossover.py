@@ -1,3 +1,5 @@
+import random
+
 import numpy as np
 from random import uniform
 from eckity.genetic_operators.genetic_operator import GeneticOperator
@@ -15,8 +17,9 @@ class PermutationCrossover(GeneticOperator):
     def apply(self, individuals):
         for i in range(0, len(individuals) - 1, 2):
             if i + 1 < len(individuals) and uniform(0, 1) <= self.probability:
-                individuals[i] = self.cross(individuals[i], individuals[i + 1])
-                individuals[i + 1] = self.cross(individuals[i + 1], individuals[i])
+                temp_individual = individuals[i]
+                individuals[i] = self.single_point_cross(individuals[i], individuals[i + 1])
+                individuals[i + 1] = self.single_point_cross(individuals[i + 1], temp_individual)
         self.applied_individuals = individuals
         return individuals
 
@@ -37,6 +40,18 @@ class PermutationCrossover(GeneticOperator):
         individual1.set_vector(subset)
         return individual1
 
+    def single_point_cross(self, individual1: CityVector, individual2: CityVector):
+        size = individual1.size()
+        k = random.randint(0,size)
+        print("crossover point: ", k)
+        start = 0
+        end = k
+        subset = individual1.vector[start:end]
+        for i in range(size):
+            if individual2.vector[i] not in subset:
+                subset.append(individual2.vector[i])
+        individual1.set_vector(subset)
+        return individual1
 
 # if __name__ == "__main__":
 #     individuals = perm_creator.PermutationCreator(5).create_individuals(4, True)

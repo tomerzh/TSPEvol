@@ -22,9 +22,9 @@ def main():
     else:
         number_of_cities = 10
 
-    population_size = 10
+    population_size = 100
     max_generation = 100
-    number_of_iterations = 1
+    number_of_iterations = 100
 
     best_fitness = 2 ** 31
     x_vector = []
