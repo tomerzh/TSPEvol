@@ -47,6 +47,11 @@
 •	We used 0.8 probability for a crossover and 0.1 probability for a mutation.<br>
 We tried our algorithms on 15 different cities with the following (X, Y):<br>
 <b>(30, 17), (22, 1), (300, 45), (423, 54), (51, 26), (6, 7), (7, 8), (81, 19), (94, 10), (3, 250), (1, 666), (244, 1234), (522, 2145), (0, 21), (222, 1113)</b>.<br>
+In the process of checking the best parameters we tried to run the algorithm with a small size of pipulation in each generation. We tried the algorithm with population size of 10, and found out that there is a big defference between defferent runs meaning that the standart deviation is big.
+In the graph below we can see the results for a two-point crossover with population size 10: <br />
+
+<br />
+Now for the results of the experiment with population size of 100: <br />
 After the run for 2 different crossovers, we collected the data, and the results are as follows:<br>
 <b>Single point crossover –</b> A crossover point on the parent organism string is selected. All data beyond that point in the organism string is swapped between the two parent organisms.<br>
 The results for single point crossover showed that the <b>best fitness for this crossover is 4765.3</b> and the <b>average fitness is 4948</b>. We saw that a lot of the runs gave the same fitness which was 4765.3 with the same permutation. You can see the results in the graph below:<br />
