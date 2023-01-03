@@ -62,6 +62,13 @@ The results for single point crossover showed that the <b>best fitness for this 
 <br />
 <img src="https://github.com/tomerzh/TSPEvol/blob/main/plots/two.jpg?raw=true" alt="tpc"    width="800" height="400"><br />
 <br />
+   
+   <h3>Conclusion:</h3>
+   We expected that there will be a difference between the two crossovers, but in the end, both returned the same route with the same fitness.<br /> More than that, we discovered that a lot of the different runs returned the same route which is the best route in the end. <br />
+We assume that this fitness is the lower bound for this input and the algorithm can’t do better than that. The reason for that can be two options, the first is that this route is the best route there is for this input, and the second option is our crossover method is stuck and can’t pass this lower bound fitness.<br />
+The best route is represented by the graph below and we believe it’s the best route there is for this input:<br />
+   <br />
+
  </html> 
 
 
