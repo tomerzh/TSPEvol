@@ -37,13 +37,26 @@
    We do the same operation for the second parent, and after the crossover we have two new individuals for the next generation.<br>
    <b>Mutation –</b> After the crossover, we take each new individual with probability of 0.1 (or anything the user wants), we randomly choose two indexes in    the individual and swap them, making a different permutation.<br>
    
+   
    <h3>Using Our Solver:</h3>
    To use our TSP solver, please follow the following steps: <br>
-•	Clone our git repository. <br>
+    <details open>
+<summary>Install</summary>
+
+Clone repository and install [requirements.txt](https://github.com/ultralytics/yolov5/blob/master/requirements.txt).
+
+```bash
+git clone https://github.com/tomerzh/TSPEvol.git  # clone
+cd TSPEvol
+pip install -r requirements.txt  # install
+```
+</details>
+ 
 •	You can change the coordinates of each city however you want, the only restriction is the value can not be larger than the maximum integer. Another option is to ignore the given vector of cities and the script will generate random cities for the vector. <br>
 •	Feel free to change the max_generation and population_size variables to any positive integer. <br>
 •	Run the script. The result will be presented. <br>
 
+   
    
    <h3>Results:</h3>
    We wanted to give the algorithm the best parameters for a better fitness in the end of the run.<br>
@@ -87,6 +100,20 @@ As a result, we obtained an approximate lower bound considering input that was p
 We strongly believe this method of solution can achieve great results in such problems and can serve multiply industries to save money, time and resources.<br />
 An airline delivery company is an example of such a industry. <br />
 
- </html> 
+   
+   <h3>Citation:</h3>
+    </html> 
+    
+```
+@misc{eckity2022git,
+    author = {Sipper, Moshe and Halperin, Tomer and Tzruia, Itai and  Elyasaf, Achiya},
+    title = {{EC-KitY}: Evolutionary Computation Tool Kit in {Python}},
+    year = {2022},
+    publisher = {GitHub},
+    journal = {GitHub repository},
+    howpublished = {\url{https://www.eckity.org/} }
+}
+```
+
 
 
