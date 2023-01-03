@@ -49,11 +49,11 @@ We tried our algorithms on 15 different cities with the following (X, Y):<br>
 <b>(30, 17), (22, 1), (300, 45), (423, 54), (51, 26), (6, 7), (7, 8), (81, 19), (94, 10), (3, 250), (1, 666), (244, 1234), (522, 2145), (0, 21), (222, 1113)</b>.<br>
 After the run for 2 different crossovers, we collected the data, and the results are as follows:<br>
 <b>Single point crossover –</b> A crossover point on the parent organism string is selected. All data beyond that point in the organism string is swapped between the two parent organisms.<br>
-The results for single point crossover showed that the best fitness for this crossover is 4765.3 and the average fitness is 4948. We saw that a lot of the runs gave the same fitness which was 4765.3 with the same permutation. You can see the results in the graph below:<br />
+The results for single point crossover showed that the <b>best fitness for this crossover is 4765.3</b> and the <b>average fitness is 4948</b>. We saw that a lot of the runs gave the same fitness which was 4765.3 with the same permutation. You can see the results in the graph below:<br />
 <br />
 <img src="https://github.com/tomerzh/TSPEvol/blob/main/plots/single.jpg?raw=true" alt="spc"    width="800" height="400"><br />
 <b>Two-point crossover -</b> In two-point crossover, two crossover points are picked randomly from the parent chromosomes. The bits in between the two points are swapped between the parent organisms.<br>
-The results for two-point crossover showed that the best fitness for this crossover is 4765.3 and the average fitness is 4941. We saw that a lot of the runs gave the same fitness which was 4765.3 with the same permutation. You can see the results in the graph below: <br/ >
+   The results for two-point crossover showed that the <b>best fitness for this crossover is 4765.3</b> and the <b>average fitness is 4941</b>. We saw that a lot of the runs gave the same fitness which was 4765.3 with the same permutation. You can see the results in the graph below: <br/ >
 <br />
 <img src="https://github.com/tomerzh/TSPEvol/blob/main/plots/two.jpg?raw=true" alt="tpc"    width="800" height="400"><br />
 <br />
