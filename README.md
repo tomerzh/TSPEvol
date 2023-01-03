@@ -35,6 +35,22 @@
    We do it to maintain the fact that the vector is a permutation of the cities.<br>
    We do the same operation for the second parent, and after the crossover we have two new individuals for the next generation.<br>
    <b>Mutation –</b> After the crossover, we take each new individual with probability of 0.1 (or anything the user wants), we randomly choose two indexes in    the individual and swap them, making a different permutation.<br>
+   
+   <h3>Results:</h3>
+   We wanted to give the algorithm the best parameters for a better fitness in the end of the run.<br>
+   After an operation of trial and error, we discovered that the best parameters are:<br>
+•	<b>Population size – The size of the population in every generation is 100, meaning we are using 100 individuals (routes) in every generation.<br>
+•	<b>Number of generations –</b> The number of generations in one run is 100.<br>
+•	<b>Number of iterations –</b> We run the algorithm 100 times, to try and understand what the best fitness is out of all the runs, if there is a lower bound to the best fitness and what is the average fitness.<br>
+•	We tried two different crossover patterns, more about that in the next section.<br>
+•	We used 0.8 probability for a crossover and 0.1 probability for a mutation.<br>
+We tried our algorithms on 15 different cities with the following (X, Y):<br>
+(30, 17), (22, 1), (300, 45), (423, 54), (51, 26), (6, 7), (7, 8), (81, 19), (94, 10), (3, 250), (1, 666), (244, 1234), (522, 2145), (0, 21), (222, 1113).<br>
+After the run for 2 different crossovers, we collected the data, and the results are as follows:<br>
+<b>Single point crossover –</b> A crossover point on the parent organism string is selected. All data beyond that point in the organism string is swapped between the two parent organisms.<br>
+The results for single point crossover showed that the best fitness for this crossover is 4765.3 and the average fitness is 4948. We saw that a lot of the runs gave the same fitness which was 4765.3 with the same permutation. You can see the results in the graph below:<br>
+<b>Two-point crossover -</b> In two-point crossover, two crossover points are picked randomly from the parent chromosomes. The bits in between the two points are swapped between the parent organisms.<br>
+The results for two-point crossover showed that the best fitness for this crossover is 4765.3 and the average fitness is 4941. We saw that a lot of the runs gave the same fitness which was 4765.3 with the same permutation. You can see the results in the graph below:<br>
  </html> 
 
 
