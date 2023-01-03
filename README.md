@@ -1,6 +1,7 @@
 
 <html>
    <h1>Evolutionary Algorithms - Mini Project</h1>
+   <h3>Intro:</h3>
    The Traveling Salesman Problem (TSP) is a classic problem in computer science and operations research.
    It involves finding the shortest possible route that visits a given set of cities and returns to the starting city.
 
