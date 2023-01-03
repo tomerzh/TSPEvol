@@ -47,13 +47,6 @@ def main():
         )
         print("EA Process Presented Bellow:")
 
-        # for j in range(max_generation):
-        #     algo.generation_num = j
-        #
-        #     algo.set_generation_seed(algo.next_seed())
-        #     algo.generation_iteration(j)
-        #     print("Generation: ", j, " Best: ", algo.best_of_gen.fitness)
-
         # evolve the generated initial population
         algo.evolve()
         print("#####################################")

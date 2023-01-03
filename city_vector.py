@@ -36,11 +36,3 @@ class CityVector(Vector):
     def get_y(self):
         return self.city_temp.get_y()
 
-
-if __name__ == "__main__":
-    vector1 = CityVector(None, 5)
-    vector1.show()
-    vector = [vector1.get_random_number_in_bounds(i) for i in range(vector1.length)]
-    vector1.set_vector(vector)
-    vector1.show()
-

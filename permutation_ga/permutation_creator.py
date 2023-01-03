@@ -27,14 +27,6 @@ class PermutationCreator(GAVectorCreator):
         perm = list(np.random.permutation(self.vector))
         individual.set_vector(perm)
 
-#
-# if __name__ == "__main__":
-#     permutation1 = PermutationCreator(10)
-#     fitness_evaluator = TSPFitnessEvaluator()
-#     vector = permutation1.create_individuals(3, True)
-#     for i in vector:
-#         i.show()
-#         print(fitness_evaluator._evaluate_individual(i))
 
 
 

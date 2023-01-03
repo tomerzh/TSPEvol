@@ -25,7 +25,7 @@ class PermutationCrossover(GeneticOperator):
 
     # this is ordered crossover with only one parent and different points
     # ordered crossover, randomly select a subset of the first parent and fill the rest with the second parent
-    def cross(self, individual1: CityVector, individual2: CityVector):
+    def two_point_cross(self, individual1: CityVector, individual2: CityVector):
         size = individual1.size()
         # randomly select a subset of the first parent
         start = np.random.randint(0, size)
@@ -42,10 +42,8 @@ class PermutationCrossover(GeneticOperator):
 
     def single_point_cross(self, individual1: CityVector, individual2: CityVector):
         size = individual1.size()
-        k = random.randint(0,size)
-        print("crossover point: ", k)
         start = 0
-        end = k
+        end = random.randint(0, size)
         subset = individual1.vector[start:end]
         for i in range(size):
             if individual2.vector[i] not in subset:
@@ -53,12 +51,3 @@ class PermutationCrossover(GeneticOperator):
         individual1.set_vector(subset)
         return individual1
 
-# if __name__ == "__main__":
-#     individuals = perm_creator.PermutationCreator(5).create_individuals(4, True)
-#     for i in individuals:
-#         i.show()
-#     perm = PermutationCrossover()
-#     print("AFTER CROSSOVER")
-#     individuals = perm.apply(individuals)
-#     for i in individuals:
-#         i.show()

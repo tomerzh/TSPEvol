@@ -19,13 +19,3 @@ class PermutationMutation(GeneticOperator):
         self.applied_individuals = individuals
         return individuals
 
-
-# if __name__ == "__main__":
-#     individuals = perm_creator.PermutationCreator(5).create_individuals(3, True)
-#     for i in individuals:
-#         i.show()
-#     perm = PermutationMutation(1)
-#     print("AFTER MUTATION")
-#     individuals = perm.apply(individuals)
-#     for i in individuals:
-#         i.show()
