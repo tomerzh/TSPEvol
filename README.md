@@ -56,7 +56,7 @@ pip install -r requirements.txt  # install
 •	You can change the coordinates of each city however you want, the only restriction is the value can not be larger than the maximum integer. Another option is to ignore the given vector of cities and the script will generate random cities for the vector. <br>
 •	Feel free to change the max_generation and population_size variables to any positive integer. <br>
 •	Run main.py. <br />
-•  The results will be presented in a data.csv file with all the best fitness results of your runs, plus the best fitness of them all with the exact route. <br>
+•  The results will be printed or if you would like to go deeper the output will generate a data.csv file with all the best fitness results of your runs, plus the best fitness of them all with the exact route. <br>
 
    
    
